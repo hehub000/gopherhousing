@@ -13,4 +13,4 @@ const ReviewSchema: Schema = new Schema({
 
 const Review = model('Review', ReviewSchema)
 
-export type { Review };
+export { Review };

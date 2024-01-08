@@ -1,6 +1,6 @@
 // Models here, mirroring those from ../customers/models.ts
 import mongoose, { model, Schema, Model, Document } from 'mongoose';
-
+import { Review } from '../reviews/models'
 export interface IApartment extends Document {
   location: string;
   name: string;
@@ -11,11 +11,11 @@ export interface IApartment extends Document {
 }
 
 const ApartmentSchema: Schema = new Schema({
-  title: { type: String, required: true },
-  postText: { type: String, required: true },
-  comments: { type: [String] },
-  upvotes: { type: Number, default: 0 },
-  course: { type: String },
+  name: { type: String, required: true },
+  location: { type: String, required: true },
+  reviews: { type: [Review] },
+  management: { type: String, required: true },
+  averageOverall: { type: Number, default: 0 },
   id: { type: String }
 });
 
